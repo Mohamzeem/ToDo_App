@@ -46,7 +46,7 @@ class MyDrawer extends StatelessWidget {
                       .pushReplacementNamed(BinRecyclePage.id),
                   iconData: Icons.delete_outline_outlined,
                   title: 'Bin Recycle',
-                  trailing: '${state.removedTasks.length}',
+                  trailing: '${state.removedTasks.length}   ',
                 );
               },
             ),

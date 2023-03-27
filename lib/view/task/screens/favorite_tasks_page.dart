@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/models/task_model.dart';
 import '../../../../blocs/task_bloc/task_bloc.dart';
+import '../task_widgets/chip_text.dart';
 import '../task_widgets/task_list.dart';
 
 class FavoriteTasksPage extends StatelessWidget {
@@ -17,14 +19,10 @@ class FavoriteTasksPage extends StatelessWidget {
         List<TaskModel> tasksList = state.favoriteTasks;
         return Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+            padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 5.w),
             child: Column(
               children: [
-                Chip(
-                    label: Text(
-                  'Tasks: ${tasksList.length}',
-                  style: Theme.of(context).textTheme.titleMedium,
-                )),
+                ChipText(text: 'Tasks:${state.favoriteTasks.length}'),
                 TaskList(tasksList: tasksList),
               ],
             ),

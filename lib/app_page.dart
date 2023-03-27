@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
             BlocBuilder<SwitchBloc, SwitchState>(
           builder: (context, state) {
             return MaterialApp(
+              debugShowCheckedModeBanner: false,
               title: 'ToDo App',
               onGenerateRoute: AppRoutes().onGenerateRoute,
               theme: state.switchValue

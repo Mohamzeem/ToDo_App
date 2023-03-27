@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/view/task/screens/completed_tasks_page.dart';
 import 'package:todo_app/view/drawer/drawer_view.dart';
 import 'package:todo_app/view/task/screens/favorite_tasks_page.dart';
@@ -31,9 +32,6 @@ class _TabsPageState extends State<TabsPage> {
       appBar: _appBar(context),
       drawer: const MyDrawer(),
       body: pagesList[selectedPageIndex]['pageName'],
-      floatingActionButton: selectedPageIndex == 0
-          ? _floatingActionBtn(() => _addTask(context))
-          : null,
       bottomNavigationBar: _bottomNavigationBar(),
     );
   }
@@ -45,20 +43,18 @@ class _TabsPageState extends State<TabsPage> {
         ),
         actions: [
           selectedPageIndex == 0
-              ? IconButton(
+              ? TextButton.icon(
                   onPressed: () => _addTask(context),
-                  icon: const Icon(Icons.add))
+                  icon: Icon(
+                    Icons.add,
+                    size: 25.r,
+                  ),
+                  label: Text(
+                    'Add Task ',
+                    style: Theme.of(context).textTheme.displayMedium,
+                  ))
               : Container()
         ],
-      );
-
-  FloatingActionButton _floatingActionBtn(void Function() onPressed) =>
-      FloatingActionButton(
-        onPressed: onPressed,
-        child: const Icon(
-          Icons.add,
-          size: 30,
-        ),
       );
 
   BottomNavigationBar _bottomNavigationBar() => BottomNavigationBar(
@@ -90,7 +86,7 @@ class _TabsPageState extends State<TabsPage> {
             padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom),
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
               child: const AddTask(),
             ),
           ),
@@ -98,4 +94,12 @@ class _TabsPageState extends State<TabsPage> {
       },
     );
   }
+  // FloatingActionButton _floatingActionBtn(void Function() onPressed) =>
+  //     FloatingActionButton(
+  //       onPressed: onPressed,
+  //       child: const Icon(
+  //         Icons.add,
+  //         size: 30,
+  //       ),
+  //     );
 }

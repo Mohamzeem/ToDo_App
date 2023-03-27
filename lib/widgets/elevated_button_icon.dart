@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:todo_app/widgets/text_widget.dart';
 
@@ -33,7 +34,7 @@ class CustomElvatedBtnWithIcon extends StatelessWidget {
       label: CustomTextWidget(
           text: labelText,
           color: foregroundColor,
-          fontSize: 16,
+          fontSize: 18,
           fontWeight: FontWeight.w500),
       onPressed: onPressed,
       icon: Icon(iconData),

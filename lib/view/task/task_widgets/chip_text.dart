@@ -10,9 +10,10 @@ class ChipText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Chip(
+        elevation: 5,
         label: Text(
-      text,
-      style: Theme.of(context).textTheme.titleMedium,
-    ));
+          text,
+          style: Theme.of(context).textTheme.titleMedium,
+        ));
   }
 }
