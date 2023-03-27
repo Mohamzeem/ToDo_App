@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           builder: (context, state) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              title: 'ToDo App',
+              title: 'ToDo',
               onGenerateRoute: AppRoutes().onGenerateRoute,
               theme: state.switchValue
                   ? AppThemes().darkTheme()
