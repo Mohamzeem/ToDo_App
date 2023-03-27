@@ -1,5 +1,6 @@
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:todo_app/models/task_model.dart';
 part 'task_event.dart';
@@ -47,13 +48,19 @@ class TaskBloc extends HydratedBloc<TaskEvent, TaskState> {
           ..insert(taskIndex, taskModel.copyWith(isDone: true));
       }
     } else {
-      var taskIndex = favoriteTasks.indexOf(taskModel);
-      completedTasks = List.from(completedTasks)..remove(taskModel);
-      pendingTasks = List.from(pendingTasks)
-        ..insert(0, taskModel.copyWith(isDone: false));
-      favoriteTasks = List.from(favoriteTasks)
-        ..remove(taskModel)
-        ..insert(taskIndex, taskModel.copyWith(isDone: false));
+      if (taskModel.isFavorite == false) {
+        completedTasks = List.from(completedTasks)..remove(taskModel);
+        pendingTasks = List.from(pendingTasks)
+          ..insert(0, taskModel.copyWith(isDone: false));
+      } else {
+        var taskIndex = favoriteTasks.indexOf(taskModel);
+        completedTasks = List.from(completedTasks)..remove(taskModel);
+        pendingTasks = List.from(pendingTasks)
+          ..insert(0, taskModel.copyWith(isDone: false));
+        favoriteTasks = List.from(favoriteTasks)
+          ..remove(taskModel)
+          ..insert(taskIndex, taskModel.copyWith(isDone: false));
+      }
     }
     emit(TaskState(
       pendingTasks: pendingTasks,

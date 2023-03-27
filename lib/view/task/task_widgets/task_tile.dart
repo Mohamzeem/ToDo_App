@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:todo_app/view/task/task_widgets/edit_task.dart';
 import 'package:todo_app/widgets/sized_box_widget.dart';
@@ -38,10 +39,6 @@ class TaskTile extends StatelessWidget {
                       taskModel.title,
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context).textTheme.displayLarge,
-                      // TextStyle(
-                      //     decoration: taskModel.isDone!
-                      //         ? TextDecoration.lineThrough
-                      //         : null),
                     ),
                     Text(
                       DateFormat('E, d MMM yyyy   HH:mm:ss a')
@@ -132,7 +129,7 @@ class TaskTile extends StatelessWidget {
             padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom),
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
               child: EditTask(
                 oldTask: taskModel,
               ),

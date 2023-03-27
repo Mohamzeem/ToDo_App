@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../blocs/task_bloc/task_bloc.dart';
 import '../../../models/task_model.dart';
 import '../../../widgets/elevated_button_icon.dart';
 import '../../../widgets/sized_box_widget.dart';
 import '../../../widgets/snack_bar.dart';
-import '../../../widgets/text_widget.dart';
 
 class EditTask extends StatelessWidget {
   final TaskModel oldTask;
@@ -24,23 +24,17 @@ class EditTask extends StatelessWidget {
 
     return Column(
       children: [
-        const CustomTextWidget(
-            text: 'Edit Task',
-            color: Colors.black,
-            fontSize: 25,
-            fontWeight: FontWeight.w600),
+        Text('Edit Task', style: Theme.of(context).textTheme.bodyLarge),
         const CustomSizedBox(height: 0.015, width: 1),
         TextField(
           autofocus: true,
           controller: titleController,
-          decoration: const InputDecoration(
-              contentPadding: EdgeInsets.all(5),
-              label: CustomTextWidget(
-                  text: 'Title',
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400),
-              border: OutlineInputBorder(borderSide: BorderSide(width: 1))),
+          decoration: InputDecoration(
+              contentPadding: EdgeInsets.all(5.r),
+              label:
+                  Text('Title', style: Theme.of(context).textTheme.bodyMedium),
+              border:
+                  const OutlineInputBorder(borderSide: BorderSide(width: 1))),
         ),
         const CustomSizedBox(height: 0.015, width: 1),
         TextField(
@@ -48,14 +42,12 @@ class EditTask extends StatelessWidget {
           minLines: 3,
           maxLines: 5,
           controller: bodyController,
-          decoration: const InputDecoration(
-              contentPadding: EdgeInsets.all(5),
-              label: CustomTextWidget(
-                  text: 'Description',
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400),
-              border: OutlineInputBorder(borderSide: BorderSide(width: 1))),
+          decoration: InputDecoration(
+              contentPadding: EdgeInsets.all(5.r),
+              label: Text('Description',
+                  style: Theme.of(context).textTheme.bodyMedium),
+              border:
+                  const OutlineInputBorder(borderSide: BorderSide(width: 1))),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

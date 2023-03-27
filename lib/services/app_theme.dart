@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppThemes {
   darkTheme() => ThemeData(
@@ -15,38 +16,61 @@ class AppThemes {
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(0xFF212121),
         dividerColor: Colors.black54,
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.redAccent),
+        listTileTheme: const ListTileThemeData(iconColor: Colors.redAccent),
+        popupMenuTheme: const PopupMenuThemeData(
+            shadowColor: Colors.redAccent, elevation: 5),
         textButtonTheme: const TextButtonThemeData(
             style: ButtonStyle(
-                iconColor: MaterialStatePropertyAll(Colors.white),
+                iconColor: MaterialStatePropertyAll(Colors.redAccent),
                 iconSize: MaterialStatePropertyAll(20))),
         switchTheme: const SwitchThemeData(
-            thumbColor: MaterialStatePropertyAll(Colors.black),
+            thumbColor: MaterialStatePropertyAll(Colors.redAccent),
             trackColor: MaterialStatePropertyAll(Colors.white)),
         checkboxTheme: const CheckboxThemeData(
-            checkColor: MaterialStatePropertyAll(Colors.black),
-            fillColor: MaterialStatePropertyAll(Colors.white)),
+            checkColor: MaterialStatePropertyAll(Colors.white),
+            fillColor: MaterialStatePropertyAll(Colors.redAccent)),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: Colors.white, foregroundColor: Colors.black),
-        textTheme: const TextTheme(
+            backgroundColor: Colors.white, foregroundColor: Colors.redAccent),
+        textTheme: TextTheme(
           titleLarge: TextStyle(
-              color: Colors.white, fontSize: 30, fontWeight: FontWeight.w500),
-          titleMedium: TextStyle(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w300),
-          titleSmall: TextStyle(
-              color: Colors.white, fontSize: 15, fontWeight: FontWeight.w400),
-          displayLarge: TextStyle(
-              color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500),
-          displayMedium: TextStyle(
               color: Colors.white,
-              fontSize: 18,
+              fontSize: 30.sp,
+              fontWeight: FontWeight.w500),
+          titleMedium: TextStyle(
+              color: Colors.white,
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w300),
+          titleSmall: TextStyle(
+              color: Colors.white,
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w400),
+          displayLarge: TextStyle(
+              color: Colors.white,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w500),
+          displayMedium: TextStyle(
+              color: Colors.redAccent,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w500,
               decoration: TextDecoration.underline),
           displaySmall: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.w300),
+              color: Colors.white,
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w300),
+          bodyMedium: TextStyle(
+              color: Colors.redAccent,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w400),
+          bodyLarge: TextStyle(
+              color: Colors.redAccent,
+              fontSize: 25.sp,
+              fontWeight: FontWeight.w600),
         ),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-            backgroundColor: Colors.grey, unselectedItemColor: Colors.white),
+            selectedItemColor: Colors.redAccent,
+            backgroundColor: Colors.grey,
+            unselectedItemColor: Colors.black),
       );
 
   lightTheme() => ThemeData(
@@ -55,46 +79,67 @@ class AppThemes {
           elevation: 0,
           centerTitle: true,
           systemOverlayStyle:
-              SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
+              SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light),
         ),
         primarySwatch: Colors.grey,
         primaryColor: Colors.white,
         brightness: Brightness.light,
         scaffoldBackgroundColor: Colors.white,
         dividerColor: const Color(0xff757575),
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.greenAccent),
+        listTileTheme: const ListTileThemeData(iconColor: Colors.greenAccent),
+        popupMenuTheme: const PopupMenuThemeData(
+            shadowColor: Colors.greenAccent, elevation: 5),
         textButtonTheme: const TextButtonThemeData(
             style: ButtonStyle(
-                iconColor: MaterialStatePropertyAll(Colors.black),
+                iconColor: MaterialStatePropertyAll(Colors.greenAccent),
                 iconSize: MaterialStatePropertyAll(20))),
         switchTheme: const SwitchThemeData(
-            thumbColor: MaterialStatePropertyAll(Colors.white),
+            thumbColor: MaterialStatePropertyAll(Colors.greenAccent),
             trackColor: MaterialStatePropertyAll(Colors.black)),
         checkboxTheme: const CheckboxThemeData(
-            checkColor: MaterialStatePropertyAll(Colors.white),
-            fillColor: MaterialStatePropertyAll(Colors.black)),
+            checkColor: MaterialStatePropertyAll(Colors.black),
+            fillColor: MaterialStatePropertyAll(Colors.greenAccent)),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: Colors.black, foregroundColor: Colors.white),
-        textTheme: const TextTheme(
+            backgroundColor: Colors.black, foregroundColor: Colors.greenAccent),
+        textTheme: TextTheme(
           titleLarge: TextStyle(
-              color: Colors.black, fontSize: 30, fontWeight: FontWeight.w500),
-          titleMedium: TextStyle(
-              color: Colors.black, fontSize: 20, fontWeight: FontWeight.w300),
-          titleSmall: TextStyle(
-              color: Colors.black, fontSize: 16, fontWeight: FontWeight.w400),
-          displayLarge: TextStyle(
-              color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),
-          displayMedium: TextStyle(
               color: Colors.black,
-              fontSize: 18,
+              fontSize: 30.sp,
+              fontWeight: FontWeight.w500),
+          titleMedium: TextStyle(
+              color: Colors.black,
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w300),
+          titleSmall: TextStyle(
+              color: Colors.black,
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w400),
+          displayLarge: TextStyle(
+              color: Colors.black,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w500),
+          displayMedium: TextStyle(
+              color: Colors.greenAccent,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w500,
               decoration: TextDecoration.underline),
           displaySmall: TextStyle(
-              color: Colors.black, fontSize: 16, fontWeight: FontWeight.w300),
+              color: Colors.black,
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w300),
+          bodyMedium: TextStyle(
+              color: Colors.greenAccent,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w400),
+          bodyLarge: TextStyle(
+              color: Colors.greenAccent,
+              fontSize: 25.sp,
+              fontWeight: FontWeight.w600),
         ),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
             backgroundColor: Colors.grey,
-            selectedItemColor: Colors.black,
+            selectedItemColor: Colors.greenAccent,
             unselectedItemColor: Colors.white),
       );
 }

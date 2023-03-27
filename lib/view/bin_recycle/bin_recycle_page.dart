@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_app/view/task/task_widgets/chip_text.dart';
 import '../../blocs/task_bloc/task_bloc.dart';
 import '../../widgets/sized_box_widget.dart';
 import '../../widgets/snack_bar.dart';
-import '../../widgets/text_widget.dart';
 import '../drawer/drawer_view.dart';
 import '../task/task_widgets/task_list.dart';
 
@@ -24,13 +24,7 @@ class BinRecyclePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
               child: Column(
                 children: [
-                  Chip(
-                    label: CustomTextWidget(
-                        text: 'Tasks: ${state.removedTasks.length}',
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500),
-                  ),
+                  ChipText(text: 'Tasks: ${state.removedTasks.length}'),
                   TaskList(tasksList: state.removedTasks),
                   const CustomSizedBox(height: 0.08, width: 1)
                 ],
