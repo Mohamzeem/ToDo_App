@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/models/task_model.dart';
+import 'package:todo_app/services/localizations.dart';
 import '../../../blocs/task_bloc/task_bloc.dart';
 import '../task_widgets/chip_text.dart';
 import '../task_widgets/task_list.dart';
@@ -25,10 +26,17 @@ class PendingTasksPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ChipText(text: 'Pending: ${tasksList.length}'),
-                    ChipText(text: 'Completed:${state.completedTasks.length}'),
-                    ChipText(text: 'Favorites:${state.favoriteTasks.length}'),
-                    ChipText(text: 'Deleted:${state.removedTasks.length}'),
+                    ChipText(
+                        text: '${'pending'.tr(context)}: ${tasksList.length}'),
+                    ChipText(
+                        text:
+                            '${'completed'.tr(context)}: ${state.completedTasks.length}'),
+                    ChipText(
+                        text:
+                            '${'favorites'.tr(context)}: ${state.favoriteTasks.length}'),
+                    ChipText(
+                        text:
+                            '${'deleted'.tr(context)}: ${state.removedTasks.length}'),
                   ],
                 ),
                 TaskList(tasksList: tasksList),

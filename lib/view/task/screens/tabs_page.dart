@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_app/services/localizations.dart';
 import 'package:todo_app/view/task/screens/completed_tasks_page.dart';
 import 'package:todo_app/view/drawer/drawer_view.dart';
 import 'package:todo_app/view/task/screens/favorite_tasks_page.dart';
@@ -17,7 +18,7 @@ class TabsPage extends StatefulWidget {
 
 class _TabsPageState extends State<TabsPage> {
   final List<Map<String, dynamic>> pagesList = [
-    {'pageName': const PendingTasksPage(), 'pageTitle': 'Pending Tasks'},
+    {'pageName': const PendingTasksPage(), 'pageTitle': 'Completed Tasks'},
     {'pageName': const CompletedTasksPage(), 'pageTitle': 'Completed Tasks'},
     {'pageName': const FavoriteTasksPage(), 'pageTitle': 'Favorite Tasks'},
   ];
@@ -50,7 +51,7 @@ class _TabsPageState extends State<TabsPage> {
                     size: 25.r,
                   ),
                   label: Text(
-                    'Add Task ',
+                    'add'.tr(context),
                     style: Theme.of(context).textTheme.displayMedium,
                   ))
               : Container()
@@ -64,14 +65,16 @@ class _TabsPageState extends State<TabsPage> {
             selectedPageIndex = value;
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
-              label: 'Pending Tasks',
-              icon: Icon(Icons.incomplete_circle_outlined)),
+              label: 'pending_tasks'.tr(context),
+              icon: const Icon(Icons.incomplete_circle_outlined)),
           BottomNavigationBarItem(
-              label: 'Completed Tasks', icon: Icon(Icons.done_outline)),
+              label: 'completed_tasks'.tr(context),
+              icon: const Icon(Icons.done_outline)),
           BottomNavigationBarItem(
-              label: 'Favorite Tasks', icon: Icon(Icons.favorite_outline)),
+              label: 'favorite_tasks'.tr(context),
+              icon: const Icon(Icons.favorite_outline)),
         ],
       );
 

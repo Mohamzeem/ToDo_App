@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_app/services/localizations.dart';
 import 'package:todo_app/view/drawer/drawer_widets/drawer_list_tile.dart';
 import 'package:todo_app/view/task/screens/tabs_page.dart';
 import '../../blocs/switch_bloc/switch_bloc.dart';
@@ -22,7 +23,7 @@ class MyDrawer extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.06,
               child: Center(
                 child: Text(
-                  'Tasks Navigator',
+                  'tasks_navigator'.tr(context),
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
@@ -33,9 +34,9 @@ class MyDrawer extends StatelessWidget {
                   onTap: () =>
                       Navigator.of(context).pushReplacementNamed(TabsPage.id),
                   iconData: Icons.folder_copy_outlined,
-                  title: 'My Tasks',
+                  title: 'my_tasks'.tr(context),
                   trailing:
-                      '${state.pendingTasks.length} / ${state.completedTasks.length}',
+                      '${state.pendingTasks.length} / ${state.completedTasks.length}    ',
                 );
               },
             ),
@@ -45,8 +46,8 @@ class MyDrawer extends StatelessWidget {
                   onTap: () => Navigator.of(context)
                       .pushReplacementNamed(BinRecyclePage.id),
                   iconData: Icons.delete_outline_outlined,
-                  title: 'Bin Recycle',
-                  trailing: '${state.removedTasks.length}   ',
+                  title: 'bin_recycle'.tr(context),
+                  trailing: '${state.removedTasks.length}       ',
                 );
               },
             ),
@@ -55,7 +56,7 @@ class MyDrawer extends StatelessWidget {
                 Icons.sunny,
               ),
               title: Text(
-                'Change Theme',
+                'change_theme'.tr(context),
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               trailing: BlocBuilder<SwitchBloc, SwitchState>(

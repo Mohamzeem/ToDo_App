@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import 'package:todo_app/services/localizations.dart';
 import 'package:todo_app/view/task/task_widgets/edit_task.dart';
 import 'package:todo_app/widgets/sized_box_widget.dart';
 import 'package:todo_app/widgets/snack_bar.dart';
@@ -65,8 +66,10 @@ class TaskTile extends StatelessWidget {
                             ShowSnackBar().showSuccessSnackBar(
                                 context: context,
                                 message: taskModel.isDone == false
-                                    ? 'Task Completed & Moved Successfully'
-                                    : 'Task Pended & Restored Successfully');
+                                    ? 'task_completed_moved_successfully'
+                                        .tr(context)
+                                    : 'task_pended_restored_successfully'
+                                        .tr(context));
                           }
                         : null,
                   )
@@ -74,36 +77,34 @@ class TaskTile extends StatelessWidget {
             PopupButton(
               taskModel: taskModel,
               delete: () {
-                // Navigator.pop(context);
                 removeOrDeleteTask(context, taskModel);
                 ShowSnackBar().showErrorSnackBar(
                     context: context,
                     message: taskModel.isDeleted == false
-                        ? 'Task Removed Successfully'
-                        : 'Task Deleted Permanently');
+                        ? 'task_removed_successfully'.tr(context)
+                        : 'task_deleted_permanently'.tr(context));
               },
               favorite: () {
-                // Navigator.pop(context);
                 context
                     .read<TaskBloc>()
                     .add(FavoriteTaskEvent(taskModel: taskModel));
                 ShowSnackBar().showSuccessSnackBar(
                     context: context,
                     message: taskModel.isFavorite == false
-                        ? 'Task Add to Favorites Successfully'
-                        : 'Task Removed from Favorites');
+                        ? 'task_added_to_favroites_successfully'.tr(context)
+                        : 'task_removed_from_favorites'.tr(context));
               },
               edit: () {
                 Navigator.pop(context);
                 _editTask(context);
               },
               retore: () {
-                // Navigator.pop(context);
                 context
                     .read<TaskBloc>()
                     .add(RestoreTaskEvent(taskModel: taskModel));
                 ShowSnackBar().showSuccessSnackBar(
-                    context: context, message: 'Task Restored Successfully');
+                    context: context,
+                    message: 'task_restored_successfully'.tr(context));
               },
             )
           ],

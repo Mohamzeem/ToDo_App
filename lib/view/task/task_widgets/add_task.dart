@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/services/id_generator.dart';
+import 'package:todo_app/services/localizations.dart';
 import '../../../blocs/task_bloc/task_bloc.dart';
 import '../../../models/task_model.dart';
 import '../../../widgets/elevated_button_icon.dart';
@@ -18,15 +19,16 @@ class AddTask extends StatelessWidget {
 
     return Column(
       children: [
-        Text('Add Task', style: Theme.of(context).textTheme.bodyLarge),
+        Text('add_task'.tr(context),
+            style: Theme.of(context).textTheme.bodyLarge),
         const CustomSizedBox(height: 0.015, width: 1),
         TextField(
           autofocus: true,
           controller: titleController,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.all(5.r),
-              label:
-                  Text('Title', style: Theme.of(context).textTheme.bodyMedium),
+              label: Text('title'.tr(context),
+                  style: Theme.of(context).textTheme.bodyMedium),
               border:
                   const OutlineInputBorder(borderSide: BorderSide(width: 1))),
         ),
@@ -38,7 +40,7 @@ class AddTask extends StatelessWidget {
           controller: bodyController,
           decoration: InputDecoration(
               contentPadding: EdgeInsets.all(5.r),
-              label: Text('Description',
+              label: Text('content'.tr(context),
                   style: Theme.of(context).textTheme.bodyMedium),
               border:
                   const OutlineInputBorder(borderSide: BorderSide(width: 1))),
@@ -49,7 +51,7 @@ class AddTask extends StatelessWidget {
             CustomElvatedBtnWithIcon(
               width: 0.25,
               height: 0.04,
-              labelText: 'Add',
+              labelText: 'add'.tr(context),
               onPressed: () {
                 var task = TaskModel(
                     title: titleController.text,
@@ -61,7 +63,8 @@ class AddTask extends StatelessWidget {
                 bodyController.clear();
                 Navigator.pop(context);
                 ShowSnackBar().showSuccessSnackBar(
-                    context: context, message: 'Task Added Successfully');
+                    context: context,
+                    message: 'task_added_succesfully'.tr(context));
               },
               iconData: Icons.save_alt_outlined,
               backgroundColor: Colors.greenAccent,
@@ -70,7 +73,7 @@ class AddTask extends StatelessWidget {
             CustomElvatedBtnWithIcon(
               width: 0.25,
               height: 0.04,
-              labelText: 'Cancel',
+              labelText: 'cancel'.tr(context),
               onPressed: () {
                 titleController.clear();
                 bodyController.clear();
