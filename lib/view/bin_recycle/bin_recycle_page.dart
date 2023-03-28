@@ -47,18 +47,18 @@ class BinRecyclePage extends StatelessWidget {
               elevation: 5,
               itemBuilder: (context) => [
                 PopupMenuItem(
+                    onTap: () {
+                      context.read<TaskBloc>().add(DeleteAllTaskEvent());
+                      ShowSnackBar().showErrorSnackBar(
+                          context: context,
+                          message: 'All Tasks Deleted Permanently');
+                    },
                     child: TextButton.icon(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    context.read<TaskBloc>().add(DeleteAllTaskEvent());
-                    ShowSnackBar().showErrorSnackBar(
-                        context: context,
-                        message: 'All Tasks Deleted Permanently');
-                  },
-                  icon: const Icon(Icons.delete_outline),
-                  label: Text('Delete All Forever',
-                      style: Theme.of(context).textTheme.displaySmall),
-                ))
+                      onPressed: () {},
+                      icon: const Icon(Icons.delete_outline),
+                      label: Text('Delete All Forever',
+                          style: Theme.of(context).textTheme.displaySmall),
+                    ))
               ],
             )
           ]);

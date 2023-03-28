@@ -74,7 +74,7 @@ class TaskTile extends StatelessWidget {
             PopupButton(
               taskModel: taskModel,
               delete: () {
-                Navigator.pop(context);
+                // Navigator.pop(context);
                 removeOrDeleteTask(context, taskModel);
                 ShowSnackBar().showErrorSnackBar(
                     context: context,
@@ -83,7 +83,7 @@ class TaskTile extends StatelessWidget {
                         : 'Task Deleted Permanently');
               },
               favorite: () {
-                Navigator.pop(context);
+                // Navigator.pop(context);
                 context
                     .read<TaskBloc>()
                     .add(FavoriteTaskEvent(taskModel: taskModel));
@@ -98,7 +98,7 @@ class TaskTile extends StatelessWidget {
                 _editTask(context);
               },
               retore: () {
-                Navigator.pop(context);
+                // Navigator.pop(context);
                 context
                     .read<TaskBloc>()
                     .add(RestoreTaskEvent(taskModel: taskModel));
