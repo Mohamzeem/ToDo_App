@@ -24,7 +24,6 @@ class SwitchState extends Equatable {
 }
 
 class SwitchInitial extends SwitchState {
-  // const SwitchInitial({required super.switchValue});
   const SwitchInitial({required bool switchValue})
       : super(switchValue: switchValue);
 }

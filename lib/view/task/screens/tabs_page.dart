@@ -18,7 +18,7 @@ class TabsPage extends StatefulWidget {
 
 class _TabsPageState extends State<TabsPage> {
   final List<Map<String, dynamic>> pagesList = [
-    {'pageName': const PendingTasksPage(), 'pageTitle': 'Completed Tasks'},
+    {'pageName': const PendingTasksPage(), 'pageTitle': 'Pending Tasks'},
     {'pageName': const CompletedTasksPage(), 'pageTitle': 'Completed Tasks'},
     {'pageName': const FavoriteTasksPage(), 'pageTitle': 'Favorite Tasks'},
   ];

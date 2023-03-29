@@ -33,5 +33,6 @@
   "task_completed_moved_successfully": "Task Completed & Moved Successfully",
   "task_pended_restored_successfully": "Task Pended & Restored Successfully",
   "add_task": "Add Task",
-  "task_added_succesfully": "Task Added Successfully"
+  "task_added_succesfully": "Task Added Successfully",
+  "change_language": "Change Language"
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'blocs/local_bloc/local_bloc.dart';
 import 'blocs/switch_bloc/switch_bloc.dart';
 import 'blocs/task_bloc/task_bloc.dart';
 import 'services/app_routes.dart';
@@ -18,13 +19,13 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => TaskBloc()),
         BlocProvider(create: (context) => SwitchBloc()),
+        BlocProvider(create: (context) => LocalBloc()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(392.72727272727275, 781.0909090909091),
         minTextAdapt: true,
         splitScreenMode: true,
-        builder: (BuildContext context, Widget? child) =>
-            BlocBuilder<SwitchBloc, SwitchState>(
+        builder: (context, child) => BlocBuilder<SwitchBloc, SwitchState>(
           builder: (context, state) {
             return MaterialApp(
               supportedLocales: const [Locale('en'), Locale('ar')],
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
                 }
                 return supportedLocales.first;
               },
+              // locale: const Locale('ar'),
               debugShowCheckedModeBanner: false,
               title: 'ToDo',
               onGenerateRoute: AppRoutes().onGenerateRoute,

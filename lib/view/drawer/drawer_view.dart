@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_app/blocs/local_bloc/local_bloc.dart';
 import 'package:todo_app/services/localizations.dart';
 import 'package:todo_app/view/drawer/drawer_widets/drawer_list_tile.dart';
 import 'package:todo_app/view/task/screens/tabs_page.dart';
@@ -72,6 +73,27 @@ class MyDrawer extends StatelessWidget {
                 },
               ),
             ),
+            // ListTile(
+            //   leading: const Icon(
+            //     Icons.language_outlined,
+            //   ),
+            //   title: Text(
+            //     'change_language'.tr(context),
+            //     style: Theme.of(context).textTheme.titleMedium,
+            //   ),
+            //   trailing: BlocBuilder<LocalBloc, LocalState>(
+            //     builder: (context, state) {
+            //       return Switch(
+            //         value: state.localValue,
+            //         onChanged: (value) {
+            //           value
+            //               ? context.read<LocalBloc>().add(LocalOnEvent())
+            //               : context.read<LocalBloc>().add(LocalOffEvent());
+            //         },
+            //       );
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),

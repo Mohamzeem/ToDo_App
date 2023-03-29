@@ -1,8 +1,8 @@
 {
-  "pending": "الحالية",
-  "completed": "المكتملة",
-  "favorites": "المفضلة",
-  "deleted": "المحذوفة",
+  "pending": "حالية",
+  "completed": "مكتملة",
+  "favorites": "مفضلة",
+  "deleted": "محذوفة",
   "pending_tasks": "المهام الحالية",
   "completed_tasks": "المهام المكتملة",
   "favorite_tasks": "المهام المفضلة",
@@ -33,5 +33,6 @@
   "task_completed_moved_successfully": "تم انهاء المهمة بنجاح",
   "task_pended_restored_successfully": "تم استرجاع المهمة الي الحالية",
   "add_task": "اضافة مهمة",
-  "task_added_succesfully": "تم اضافة المهمة بنجاح"
+  "task_added_succesfully": "تم اضافة المهمة بنجاح",
+  "change_language": "تغيير اللغة"
 }
