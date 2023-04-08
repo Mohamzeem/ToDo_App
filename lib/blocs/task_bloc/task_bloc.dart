@@ -1,6 +1,5 @@
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:todo_app/models/task_model.dart';
 part 'task_event.dart';
