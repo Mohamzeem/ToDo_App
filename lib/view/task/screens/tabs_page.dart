@@ -48,13 +48,13 @@ class _TabsPageState extends State<TabsPage> {
                   onPressed: () => _addTask(context),
                   icon: Icon(
                     Icons.add,
-                    size: 25.r,
+                    size: 20.r,
                   ),
                   label: Text(
                     'add'.tr(context),
                     style: Theme.of(context).textTheme.displayMedium,
                   ))
-              : Container()
+              : Container(),
         ],
       );
 
@@ -97,12 +97,4 @@ class _TabsPageState extends State<TabsPage> {
       },
     );
   }
-  // FloatingActionButton _floatingActionBtn(void Function() onPressed) =>
-  //     FloatingActionButton(
-  //       onPressed: onPressed,
-  //       child: const Icon(
-  //         Icons.add,
-  //         size: 30,
-  //       ),
-  //     );
 }

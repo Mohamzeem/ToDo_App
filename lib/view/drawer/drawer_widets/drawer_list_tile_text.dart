@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ListTileDrawer extends StatelessWidget {
+class ListTileDrawerText extends StatelessWidget {
   final Function() onTap;
   final IconData iconData;
   final String title;
   final String trailing;
-  const ListTileDrawer({
+  const ListTileDrawerText({
     Key? key,
     required this.onTap,
     required this.iconData,

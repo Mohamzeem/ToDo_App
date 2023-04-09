@@ -13,7 +13,7 @@ class ChipText extends StatelessWidget {
         elevation: 5,
         label: Text(
           text,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.displayLarge,
         ));
   }
 }

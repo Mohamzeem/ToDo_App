@@ -26,8 +26,8 @@ class PendingTasksPage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ChipText(
-                        text: '${'pending'.tr(context)}: ${tasksList.length}'),
+                    // ChipText(
+                    //     text: '${'pending'.tr(context)}: ${tasksList.length}'),
                     ChipText(
                         text:
                             '${'completed'.tr(context)}: ${state.completedTasks.length}'),

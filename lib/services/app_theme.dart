@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppThemes {
   darkTheme() => ThemeData(
-        fontFamily: 'MouseMemoirs',
+        fontFamily: 'Cairo',
         appBarTheme: const AppBarTheme(
           systemOverlayStyle:
               SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light),
@@ -35,28 +35,28 @@ class AppThemes {
         textTheme: TextTheme(
           titleLarge: TextStyle(
               color: Colors.white,
-              fontSize: 30.sp,
+              fontSize: 25.sp,
               fontWeight: FontWeight.w500),
           titleMedium: TextStyle(
               color: Colors.white,
-              fontSize: 20.sp,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w300),
           titleSmall: TextStyle(
               color: Colors.white,
-              fontSize: 15.sp,
+              fontSize: 13.sp,
               fontWeight: FontWeight.w400),
           displayLarge: TextStyle(
               color: Colors.white,
-              fontSize: 18.sp,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500),
           displayMedium: TextStyle(
               color: Colors.redAccent,
-              fontSize: 18.sp,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w500,
               decoration: TextDecoration.underline),
           displaySmall: TextStyle(
               color: Colors.white,
-              fontSize: 16.sp,
+              fontSize: 12.sp,
               fontWeight: FontWeight.w300),
           bodyMedium: TextStyle(
               color: Colors.redAccent,
@@ -74,7 +74,7 @@ class AppThemes {
       );
 
   lightTheme() => ThemeData(
-        fontFamily: 'MouseMemoirs',
+        fontFamily: 'Cairo',
         appBarTheme: const AppBarTheme(
           elevation: 0,
           centerTitle: true,
@@ -105,28 +105,28 @@ class AppThemes {
         textTheme: TextTheme(
           titleLarge: TextStyle(
               color: Colors.black,
-              fontSize: 30.sp,
+              fontSize: 25.sp,
               fontWeight: FontWeight.w500),
           titleMedium: TextStyle(
               color: Colors.black,
-              fontSize: 20.sp,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w300),
           titleSmall: TextStyle(
               color: Colors.black,
-              fontSize: 16.sp,
+              fontSize: 13.sp,
               fontWeight: FontWeight.w400),
           displayLarge: TextStyle(
               color: Colors.black,
-              fontSize: 18.sp,
+              fontSize: 15.sp,
               fontWeight: FontWeight.w500),
           displayMedium: TextStyle(
               color: Colors.greenAccent,
-              fontSize: 18.sp,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w500,
               decoration: TextDecoration.underline),
           displaySmall: TextStyle(
               color: Colors.black,
-              fontSize: 16.sp,
+              fontSize: 12.sp,
               fontWeight: FontWeight.w300),
           bodyMedium: TextStyle(
               color: Colors.greenAccent,
@@ -134,7 +134,7 @@ class AppThemes {
               fontWeight: FontWeight.w400),
           bodyLarge: TextStyle(
               color: Colors.greenAccent,
-              fontSize: 25.sp,
+              fontSize: 22.sp,
               fontWeight: FontWeight.w600),
         ),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(

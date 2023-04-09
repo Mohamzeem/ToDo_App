@@ -1,12 +1,14 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_app/blocs/app_bloc/app_bloc.dart';
 import 'package:todo_app/services/localizations.dart';
-import 'package:todo_app/view/drawer/drawer_widets/drawer_list_tile.dart';
 import 'package:todo_app/view/task/screens/tabs_page.dart';
-import '../../blocs/switch_bloc/switch_bloc.dart';
+import '../../blocs/app_bloc/app_state.dart';
 import '../../blocs/task_bloc/task_bloc.dart';
 import '../bin_recycle/bin_recycle_page.dart';
+import 'drawer_widets/drawer_list_tile _widget.dart';
+import 'drawer_widets/drawer_list_tile_text.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -30,7 +32,7 @@ class MyDrawer extends StatelessWidget {
             ),
             BlocBuilder<TaskBloc, TaskState>(
               builder: (context, state) {
-                return ListTileDrawer(
+                return ListTileDrawerText(
                   onTap: () =>
                       Navigator.of(context).pushReplacementNamed(TabsPage.id),
                   iconData: Icons.folder_copy_outlined,
@@ -42,7 +44,7 @@ class MyDrawer extends StatelessWidget {
             ),
             BlocBuilder<TaskBloc, TaskState>(
               builder: (context, state) {
-                return ListTileDrawer(
+                return ListTileDrawerText(
                   onTap: () => Navigator.of(context)
                       .pushReplacementNamed(BinRecyclePage.id),
                   iconData: Icons.delete_outline_outlined,
@@ -51,48 +53,34 @@ class MyDrawer extends StatelessWidget {
                 );
               },
             ),
-            ListTile(
-              leading: const Icon(
-                Icons.sunny,
-              ),
-              title: Text(
-                'change_theme'.tr(context),
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              trailing: BlocBuilder<SwitchBloc, SwitchState>(
-                builder: (context, state) {
-                  return Switch(
-                    value: state.switchValue,
-                    onChanged: (value) {
-                      value
-                          ? context.read<SwitchBloc>().add(SwitchOnEvent())
-                          : context.read<SwitchBloc>().add(SwitchOffEvent());
-                    },
-                  );
-                },
-              ),
+            BlocBuilder<AppBloc, AppState>(
+              builder: (context, state) {
+                return ListTileDrawerWidget(
+                  iconData: Icons.wb_sunny_outlined,
+                  title: 'change_theme'.tr(context),
+                  value: state.themeValue,
+                  onChanged: (newVal) {
+                    newVal
+                        ? context.read<AppBloc>().add(LightThemeEvent())
+                        : context.read<AppBloc>().add(DarkThemeEvent());
+                  },
+                );
+              },
             ),
-            // ListTile(
-            //   leading: const Icon(
-            //     Icons.language_outlined,
-            //   ),
-            //   title: Text(
-            //     'change_language'.tr(context),
-            //     style: Theme.of(context).textTheme.titleMedium,
-            //   ),
-            //   trailing: BlocBuilder<LocalBloc, LocalState>(
-            //     builder: (context, state) {
-            //       return Switch(
-            //         value: state.localValue,
-            //         onChanged: (value) {
-            //           value
-            //               ? context.read<LocalBloc>().add(LocalOnEvent())
-            //               : context.read<LocalBloc>().add(LocalOffEvent());
-            //         },
-            //       );
-            //     },
-            //   ),
-            // ),
+            BlocBuilder<AppBloc, AppState>(
+              builder: (context, state) {
+                return ListTileDrawerWidget(
+                  iconData: Icons.language_outlined,
+                  title: 'change_language'.tr(context),
+                  value: state.langValue,
+                  onChanged: (newVal) {
+                    newVal
+                        ? context.read<AppBloc>().add(EnglishEvent())
+                        : context.read<AppBloc>().add(ArabicEvent());
+                  },
+                );
+              },
+            ),
           ],
         ),
       ),

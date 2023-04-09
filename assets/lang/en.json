@@ -34,5 +34,9 @@
   "task_pended_restored_successfully": "Task Pended & Restored Successfully",
   "add_task": "Add Task",
   "task_added_succesfully": "Task Added Successfully",
-  "change_language": "Change Language"
+  "change_language": "Change Language",
+  "light": "Light",
+  "dark": "Dark",
+  "ar": "Ar",
+  "en": "En"
 }

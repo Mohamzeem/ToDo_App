@@ -11,7 +11,7 @@
   "tasks_navigator": "وجهات المهام",
   "my_tasks": "مهامي",
   "bin_recycle": "سلة المحذوفات",
-  "change_theme": "تغيير لون التطبيق",
+  "change_theme": "تغيير اللون",
   "all_tasks_deleted": "تم حذف جميع المهام نهائيا",
   "delete_all_forever": "حذف الجميع نهائيا",
   "delete_forever": "حذف نهائي",
@@ -34,5 +34,9 @@
   "task_pended_restored_successfully": "تم استرجاع المهمة الي الحالية",
   "add_task": "اضافة مهمة",
   "task_added_succesfully": "تم اضافة المهمة بنجاح",
-  "change_language": "تغيير اللغة"
+  "change_language": "تغيير اللغة",
+  "light": "فاتح",
+  "dark": "غامق",
+  "ar": "عربي",
+  "en": "انجليزي"
 }

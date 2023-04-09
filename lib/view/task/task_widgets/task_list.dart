@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_app/services/localizations.dart';
 import 'package:todo_app/view/task/task_widgets/task_tile.dart';
 import '../../../models/task_model.dart';
 
@@ -31,21 +32,21 @@ class TaskList extends StatelessWidget {
                             TextSpan(
                               children: [
                                 TextSpan(
-                                  text: 'Title:',
+                                  text: '${'title'.tr(context)}:',
                                   style:
                                       Theme.of(context).textTheme.displayMedium,
                                 ),
                                 TextSpan(
-                                    text: ' ${task.title}',
+                                    text: '  ${task.title}',
                                     style:
                                         Theme.of(context).textTheme.titleSmall),
                                 TextSpan(
-                                  text: '\nDescription:',
+                                  text: '\n${'content'.tr(context)}:',
                                   style:
                                       Theme.of(context).textTheme.displayMedium,
                                 ),
                                 TextSpan(
-                                    text: ' ${task.body}',
+                                    text: '  ${task.body}',
                                     style:
                                         Theme.of(context).textTheme.titleSmall),
                               ],
