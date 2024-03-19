@@ -26,6 +26,7 @@ class FavoriteTasksPage extends StatelessWidget {
                 ChipText(
                     text:
                         '${'tasks'.tr(context)}: ${state.favoriteTasks.length}'),
+                SizedBox(height: 5.h),
                 TaskList(tasksList: tasksList),
               ],
             ),

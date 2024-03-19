@@ -39,6 +39,7 @@ class PendingTasksPage extends StatelessWidget {
                             '${'deleted'.tr(context)}: ${state.removedTasks.length}'),
                   ],
                 ),
+                SizedBox(height: 5.h),
                 TaskList(tasksList: tasksList),
               ],
             ),

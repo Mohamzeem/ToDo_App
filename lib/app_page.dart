@@ -48,8 +48,8 @@ class MyApp extends StatelessWidget {
               title: 'ToDo',
               onGenerateRoute: AppRoutes().onGenerateRoute,
               theme: state.themeValue
-                  ? AppThemes().darkTheme()
-                  : AppThemes().lightTheme(),
+                  ? AppThemes().lightTheme()
+                  : AppThemes().darkTheme(),
               home: const TabsPage(),
             );
           },

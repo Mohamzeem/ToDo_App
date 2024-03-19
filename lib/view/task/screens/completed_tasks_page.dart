@@ -24,6 +24,7 @@ class CompletedTasksPage extends StatelessWidget {
             child: Column(
               children: [
                 ChipText(text: '${'tasks'.tr(context)}: ${tasksList.length}'),
+                SizedBox(height: 5.h),
                 TaskList(tasksList: tasksList),
               ],
             ),

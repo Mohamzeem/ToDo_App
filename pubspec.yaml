@@ -38,10 +38,10 @@ dependencies:
   flutter_bloc: ^8.1.2
   get_it: ^7.2.0
   flutter_screenutil: ^5.7.0
-  hydrated_bloc: ^9.1.0
+  hydrated_bloc: ^9.1.4
   path_provider: ^2.0.14
   intl: any
-  flutter_launcher_icons: ^0.12.0
+  flutter_launcher_icons: ^0.13.1
   flutter_localizations:
     sdk: flutter
   flutter_switch: ^0.3.2
@@ -55,12 +55,13 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 flutter_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/images/app1.png"
+  background_color_ios: "#ffffff"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
