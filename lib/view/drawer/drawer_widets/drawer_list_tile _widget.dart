@@ -7,12 +7,12 @@ class ListTileDrawerWidget extends StatelessWidget {
   final bool value;
   final void Function(bool) onChanged;
   const ListTileDrawerWidget({
-    Key? key,
+    super.key,
     required this.iconData,
     required this.title,
     required this.value,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

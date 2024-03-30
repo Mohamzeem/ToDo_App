@@ -12,9 +12,9 @@ class EditTask extends StatelessWidget {
   final TaskModel oldTask;
 
   const EditTask({
-    Key? key,
+    super.key,
     required this.oldTask,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

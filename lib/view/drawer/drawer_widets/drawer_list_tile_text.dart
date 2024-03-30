@@ -6,12 +6,12 @@ class ListTileDrawerText extends StatelessWidget {
   final String title;
   final String trailing;
   const ListTileDrawerText({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.iconData,
     required this.title,
     required this.trailing,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

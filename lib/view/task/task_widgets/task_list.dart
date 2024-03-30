@@ -7,9 +7,9 @@ import '../../../models/task_model.dart';
 
 class TaskList extends StatelessWidget {
   const TaskList({
-    Key? key,
+    super.key,
     required this.tasksList,
-  }) : super(key: key);
+  });
 
   final List<TaskModel> tasksList;
 

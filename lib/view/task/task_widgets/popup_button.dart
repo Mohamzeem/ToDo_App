@@ -11,13 +11,13 @@ class PopupButton extends StatelessWidget {
   final Function() edit;
   final VoidCallback retore;
   const PopupButton({
-    Key? key,
+    super.key,
     required this.taskModel,
     required this.delete,
     required this.favorite,
     required this.edit,
     required this.retore,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
               },
               locale: state.langValue ? const Locale('ar') : const Locale('en'),
               debugShowCheckedModeBanner: false,
-              title: 'ToDo',
+              title: 'Save My Tasks',
               onGenerateRoute: AppRoutes().onGenerateRoute,
               theme: state.themeValue
                   ? AppThemes().darkTheme()

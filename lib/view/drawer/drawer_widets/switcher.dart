@@ -13,7 +13,7 @@ class MySwitcher extends StatefulWidget {
   final double paddingLeft;
   final double paddingRight;
   MySwitcher({
-    Key? key,
+    super.key,
     required this.isTrue,
     required this.onToggle,
     required this.activeIcon,
@@ -22,7 +22,7 @@ class MySwitcher extends StatefulWidget {
     required this.inactiveText,
     required this.paddingLeft,
     required this.paddingRight,
-  }) : super(key: key);
+  });
 
   @override
   State<MySwitcher> createState() => _MySwitcherState();

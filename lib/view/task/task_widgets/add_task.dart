@@ -29,8 +29,8 @@ class AddTask extends StatelessWidget {
               contentPadding: EdgeInsets.all(5.r),
               label: Text('title'.tr(context),
                   style: Theme.of(context).textTheme.bodyMedium),
-              border:
-                  const OutlineInputBorder(borderSide: BorderSide(width: 1))),
+              border: const OutlineInputBorder(
+                  borderSide: BorderSide(width: 1, color: Colors.redAccent))),
         ),
         const CustomSizedBox(height: 0.015, width: 1),
         TextField(

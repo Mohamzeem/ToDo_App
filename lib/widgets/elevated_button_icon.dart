@@ -4,7 +4,7 @@ import 'package:todo_app/widgets/text_widget.dart';
 
 class CustomElvatedBtnWithIcon extends StatelessWidget {
   const CustomElvatedBtnWithIcon({
-    Key? key,
+    super.key,
     required this.labelText,
     required this.onPressed,
     required this.iconData,
@@ -12,7 +12,7 @@ class CustomElvatedBtnWithIcon extends StatelessWidget {
     required this.foregroundColor,
     required this.width,
     required this.height,
-  }) : super(key: key);
+  });
   final String labelText;
   final void Function() onPressed;
   final IconData iconData;

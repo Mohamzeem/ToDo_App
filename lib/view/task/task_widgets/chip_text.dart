@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class ChipText extends StatelessWidget {
   final String text;
   const ChipText({
-    Key? key,
+    super.key,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
